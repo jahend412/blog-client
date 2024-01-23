@@ -1,38 +1,55 @@
-.App {
-  text-align: center;
+main {}
+
+/* Navbar */
+
+header {
+    background-color: #0C1D36;
+    /* Dark Blue */
+    padding: 15px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+nav {
+    display: flex;
+    justify-content: space-between;
+    /* Distribute items evenly */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.logo {
+    color: #F9CC0B;
+    /* Yellow */
+    font-weight: bold;
+    font-size: 18px;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+    margin-left: 2%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.logo:hover {
+    color: #ffffff;
+    /* White on hover */
 }
 
-.App-link {
-  color: #61dafb;
+a {
+    color: #ffeb3b;
+    /* Yellow */
+    font-weight: bold;
+    font-size: 18px;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+a:hover {
+    color: #ffffff;
+    /* White on hover */
 }
+
+/* Additional styles for Login and Register */
+.login,
+.register {
+    display: flex;
+    justify-content: space-between;
+    margin-right: auto;
+
+}
+
+/* End of Navigation styles */
