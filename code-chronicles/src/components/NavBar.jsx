@@ -1,14 +1,15 @@
 // Navbar.js
+import { Link } from 'react-router-dom';
 
 import React from 'react';
 
 const Navbar = () => {
     return (
         <header>
-            <a className='logo' href="/">Code Chronicles</a>
+            <Link to="/">Code Chronicles</Link>
             <nav>
-                <a href="/login">Login</a>
-                <a href="/register">Register</a>
+                <Link to="/login">Login </Link>
+                <Link to="/register">Register</Link>
 
             </nav>
         </header>
