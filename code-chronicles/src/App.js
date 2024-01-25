@@ -1,11 +1,10 @@
 import React from 'react';
-import Navbar from './components/NavBar';
 import Post from './components/Post';
 import { Route, Routes } from 'react-router-dom'
 import './App.css';
-import LoginPage from './components/LoginPage';
+import LoginPage from './components/pages/LoginPage';
 import Layout from './components/Layout';
-import RegisterPage from './components/RegisterPage';
+import RegisterPage from './components/pages/RegisterPage';
 
 export default function App() {
   return (
