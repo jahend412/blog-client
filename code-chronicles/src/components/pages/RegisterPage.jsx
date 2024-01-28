@@ -1,7 +1,19 @@
-
+import React from "react";
 
 export default function RegisterPage() {
-    <div>
-        <h2>Welcome to Code Chronicles.  This is the Register Page</h2>
-    </div>
-}
+    return (
+        <div>
+            <h2>Code Chronicles</h2>
+            <form className="register">
+                <h1>Register</h1>
+                <input
+                    type="text"
+                    placeholder="Username" />
+                <input
+                    type="password"
+                    placeholder="Password" />
+                <button>Register</button>
+            </form>
+        </div>
+    );
+}; 
