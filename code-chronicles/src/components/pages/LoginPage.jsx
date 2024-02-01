@@ -7,7 +7,7 @@ export default function LoginPage() {
     const [password, setPassword] = useState('');
     const [redirect, setRedirect] = useState(false);
     async function login(event) {
-        event.preventDefault();
+        event.prevententDefault();
         const response = await fetch('http://localhost:4000/login', {
             method: 'POST',
             body: JSON.stringify({ username, password }),
@@ -38,16 +38,16 @@ export default function LoginPage() {
                     type="text"
                     placeholder="Username"
                     value={username}
-                    onChange={ev => setUsername(ev.target.value)}
+                    onChange={event => setUsername(event.target.value)}
                 />
                 <input
                     type="password"
                     placeholder="Password"
                     value={password}
-                    onChange={ev => setPassword(ev.target.value)}
+                    onChange={event => setPassword(event.target.value)}
                 />
                 <button>Login</button>
             </form>
-        </div>
+        </div >
     );
 }; 
