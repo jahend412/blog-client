@@ -17,7 +17,8 @@ function App() {
           <Route path={'/register'} element={<RegisterPage />} />
         </Route>
       </Routes>
-    </UserContextProvider>);
+    </UserContextProvider>
+  );
 };
 
 export default App;
