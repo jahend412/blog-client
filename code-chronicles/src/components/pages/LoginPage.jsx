@@ -6,8 +6,9 @@ export default function LoginPage() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [redirect, setRedirect] = useState(false);
+    const { setUserInfo } = useContext(UserContext);
     async function login(event) {
-        event.prevententDefault();
+        event.preventDefault();
         const response = await fetch('http://localhost:4000/login', {
             method: 'POST',
             body: JSON.stringify({ username, password }),
@@ -15,7 +16,11 @@ export default function LoginPage() {
             credentials: 'include',
         });
         if (response.ok) {
-            setRedirect(true);
+            response.json().then(userInfo => {
+                setUserInfo(userInfo);
+                setRedirect(true);
+            });
+
         } else {
             alert('wrong credentials');
         }
