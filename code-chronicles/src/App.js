@@ -5,17 +5,19 @@ import LoginPage from './components/pages/LoginPage';
 import Layout from './components/Layout';
 import RegisterPage from './components/pages/RegisterPage';
 import HomePage from './components/pages/HomePage';
+import { UserContextProvider } from './UserContext';
 
-export default function App() {
+function App() {
   return (
-    <Routes>
-      <Route path='/' element={<Layout />}>
-        <Route index element={<HomePage />} />
-        <Route path={'/login'} element={<LoginPage />} />
-        <Route path={'/register'} element={<RegisterPage />} />
-      </Route>
-    </Routes>
-
-  );
+    <UserContextProvider>
+      <Routes>
+        <Route path='/' element={<Layout />}>
+          <Route index element={<HomePage />} />
+          <Route path={'/login'} element={<LoginPage />} />
+          <Route path={'/register'} element={<RegisterPage />} />
+        </Route>
+      </Routes>
+    </UserContextProvider>);
 };
 
+export default App;
