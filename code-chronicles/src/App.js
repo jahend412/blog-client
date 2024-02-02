@@ -5,7 +5,7 @@ import LoginPage from './components/pages/LoginPage';
 import Layout from './components/Layout';
 import RegisterPage from './components/pages/RegisterPage';
 import HomePage from './components/pages/HomePage';
-import { UserContextProvider } from './UserContext';
+import { UserContextProvider } from './components/UserContext';
 
 function App() {
   return (

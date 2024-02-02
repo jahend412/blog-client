@@ -1,6 +1,7 @@
 // Navbar.js
 import { Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useEffect, useContext } from 'react';
+import { UserContext } from './UserContext';
 
 export default function Navbar() {
     const { setUserInfo, userInfo } = useContext(UserContext);
