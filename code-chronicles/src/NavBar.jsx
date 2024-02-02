@@ -23,11 +23,11 @@ export default function Navbar() {
         setUserInfo(null);
     }
 
-    const { username } = userInfo?.username;
+    const username = userInfo?.username;
 
     return (
         <header>
-            <Link to="/" className="logo">Code Chronicles</Link>
+            <Link to="/" className="logo">MyBlog</Link>
             <nav>
                 {username && (
                     <>
@@ -43,7 +43,5 @@ export default function Navbar() {
                 )}
             </nav>
         </header>
-
     );
-};
-
+}

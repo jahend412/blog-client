@@ -1,11 +1,11 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom'
 import './App.css';
-import LoginPage from './components/pages/LoginPage';
-import Layout from './components/Layout';
-import RegisterPage from './components/pages/RegisterPage';
-import HomePage from './components/pages/HomePage';
-import { UserContextProvider } from './components/UserContext';
+import LoginPage from './pages/LoginPage';
+import Layout from './Layout';
+import RegisterPage from './pages/RegisterPage';
+import HomePage from './pages/HomePage';
+import { UserContextProvider } from './UserContext';
 
 function App() {
   return (
