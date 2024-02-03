@@ -132,6 +132,7 @@ button:hover {
     color: #F9CC0B;
 }
 
-form h1 {
+form.login h1,
+form.register h1 {
     text-align: center;
 }
