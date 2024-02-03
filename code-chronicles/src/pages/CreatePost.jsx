@@ -22,11 +22,38 @@ export default function CreatePost() {
     const [title, setTitle] = useState('');
     const [summary, setSummary] = useState('');
     const [content, setContent] = useState('');
+    const [files, setFiles] = useState('');
+
+    function createNewPost(event) {
+        const data = new FormData();
+        data.set('title', title);
+        data.set('summary', summary);
+        data.set('content', content);
+        // data.set('file', 'file')
+        event.preventDefault();
+        fetch('http://localhost:4000/post', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                title,
+                summary,
+                content,
+            }),
+        }).then(response => {
+            if (response.status === 201) {
+                alert('Post created');
+            }
+        });
+    }
 
     return (
         <div className="create-post">
             <h1>Create a new post</h1>
-            <form>
+            <form
+                onSubmit={createNewPost}
+            >
 
                 <input type="title"
                     placeholder="Title"
@@ -39,7 +66,9 @@ export default function CreatePost() {
                     value={summary}
                     onChange={event => setSummary(event.target.value)}
                 />
-                <input type="file"
+                <input
+                    type="file"
+                    onChange={event => setFiles(event.target.value)}
 
                 />
                 <ReactQuill
