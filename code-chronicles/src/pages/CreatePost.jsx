@@ -24,23 +24,19 @@ export default function CreatePost() {
     const [content, setContent] = useState('');
     const [files, setFiles] = useState('');
 
-    function createNewPost(event) {
+    async function createNewPost(event) {
         const data = new FormData();
         data.set('title', title);
         data.set('summary', summary);
         data.set('content', content);
-        // data.set('file', 'file')
+        data.set('file', files[0])
         event.preventDefault();
-        fetch('http://localhost:4000/post', {
+        const response = await fetch('http://localhost:4000/post', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({
-                title,
-                summary,
-                content,
-            }),
+            body: data,
         }).then(response => {
             if (response.status === 201) {
                 alert('Post created');
