@@ -1,12 +1,12 @@
 import { formatISO9075 } from 'date-fns'
-import Logo from './logo.png'
+
 
 export default function Post({ title, summary, cover, content, createdAt, author }) {
 
     return (
         <div className="post">
             <div className="image">
-                <img src={Logo} />
+                <img src={'http://localhost:4000/' + cover} alt='' />
             </div>
             <div className="texts">
                 <h2>{title}</h2>
