@@ -1,18 +1,20 @@
+import { formatISO9075 } from 'date-fns'
 import Logo from './logo.png'
 
-export default function Post() {
+export default function Post({ title, summary, cover, content, createdAt, author }) {
+
     return (
         <div className="post">
             <div className="image">
                 <img src={Logo} />
             </div>
             <div className="texts">
-                <h2>This is the Title for the post</h2>
+                <h2>{title}</h2>
                 <p className='info'>
-                    <a className='author'>Josh Endemann</a>
-                    <time>1-23-23 19:45</time>
+                    <a className='author'>{author.username}</a>
+                    <time>{formatISO9075(new Date(createdAt), 'MMM d, yyyy HH:mm')}</time>
                 </p>
-                <p className='summary'>This is the content of a post</p>
+                <p className='summary'>{summary}</p>
             </div>
         </div>
 
